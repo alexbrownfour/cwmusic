@@ -3,7 +3,7 @@
 //Background
 // --------------------------
 body {
-  font-family: 'Tangerine', serif;
+  font-family: 'El Messiri', cursive !important;
   text-align: center;
   display: inline-block;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 .sliding-background{
-  background: url("../../../images/top_banner.png");
+  background: url("../../../images/top_banner.webp");
    height: 100%;
    width: 100%;
   background-size: cover;
@@ -263,30 +263,53 @@ animation: filter-animation 30s linear;
   padding: 25px;
   border-radius: 25px;
   //height: 400px;
-  max-height: 35em;
+  max-height: 40em;
   transition: all .3s;
   margin: auto auto 0.5em auto;
 }
 
 .certs-grid{
   display: inline-flex;
-  width: 100%;
+  width: 51%;
+  @media only screen and (max-width: 600px) {
+    width: 45%;
+  }
   span {
     margin: 1em 
   }
   img {
-    max-width: 10%
+    max-width: 15%;
+    padding-right: 1em;
+    @media only screen and (max-width: 600px) {
+      max-width: 50%;
+      padding-right: 1em;
+      display: grid;
+      margin: auto;
+    }
   }
 }
+
+
+
 .certs-grid-alt{
   display: inline-flex;
-  width: 100%;
+  width: 51%;
   flex-direction: row-reverse;
+  @media only screen and (max-width: 600px) {
+    width: 45%;
+  }
   span {
     margin: 1em 
   }
   img {
-    max-width: 10%
+    max-width: 15%;
+    padding-right: 1em;
+    @media only screen and (max-width: 600px) {
+      max-width: 50%;
+      padding-right: 1em;
+      display: grid;
+      margin: auto;
+    }
   }
 }
 .float-guitar-img {
@@ -322,6 +345,7 @@ z-index: 1;
   border-radius: 1em 1em 0 0;
   max-width: 100%;
   position: relative;
+  z-index: 100;
     // transform: translate(25em, -30em);
 }
 
@@ -577,9 +601,9 @@ p.hidden{
 // Q&A
 // -------------------------
 .faq{
-  min-height: 27em !important;
+  //min-height: 27em !important;
   margin-bottom: 5em !important;
-  margin-top: 1.5em !important;
+  //margin-top: 1.5em !important;
 }
 .faq-translate{
   transform: translate(2%, -15%) !important;
@@ -594,6 +618,12 @@ p.hidden{
     font-size: 1.5em;
   }
 }
+.faq-pagination {
+  @media only screen and (max-width: 600px) {
+    transform: translate(-10em, 10em) !important;
+  }
+}
+ 
 .faq-title {
   //transform: translate(-4%, -93%);
 }
@@ -628,10 +658,22 @@ p.hidden{
   text-align: center;
   font-size: 1.5em;
 }
+.contact-margin{
+  margin-bottom: 5em !important;
+}
 
 .contact-detail {
   display: flex;
   justify-content: center;
+}
+
+.contact-width{
+  min-width: 30em;
+  
+  @media only screen and (max-width: 600px) {
+    min-width: 15em;
+    word-wrap: break-word;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -646,7 +688,9 @@ p.hidden{
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2), 2px 2px 2px 2px rgba(0, 0, 0, 0.19);
   margin-bottom: 3em;
 }
-
+.header-video{
+  z-index: 100;
+}
 .card {
   background-color: transparent !important;
 }
@@ -769,7 +813,9 @@ font-family: 'Fira Sans', sans-serif;
       border-radius: 20px;
     transition: all .3s;
     }
-    
+    .info-margin {
+      margin: 2em !important;
+    }
     
     @media screen and (max-width: 992px) {
       // width: 45%;
@@ -822,12 +868,12 @@ font-family: 'Fira Sans', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: #0d0925;
-    margin-bottom: 20px;
+    margin: 1em;
   }
   
   &__text {
     color: #4e4a67;
-    margin-bottom: 30px;
+    margin: 2em;
     line-height: 1.5em;
   }
   
@@ -907,8 +953,6 @@ font-family: 'Fira Sans', sans-serif;
 
 .grayscale-img {
   filter: grayscale(1);
-  width: 44em !important;
-  height: 100% !important;
 }
 .grayscale-img-alt {
   filter: grayscale(1);
@@ -936,4 +980,12 @@ font-family: 'Fira Sans', sans-serif;
 
 .contact-icons-page {
   font-size: 1.5em;
+  a {
+    display: inline-block;
+    width: 40%;
+    margin: 1em;
+    @media only screen and (max-width: 600px) {
+      margin: .3em;
+    }
+  }
 }
