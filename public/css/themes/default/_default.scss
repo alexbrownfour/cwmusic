@@ -873,8 +873,9 @@ font-family: 'Fira Sans', sans-serif;
   
   &__text {
     color: #4e4a67;
-    margin: 2em;
+    margin: 1em;
     line-height: 1.5em;
+    word-wrap: break-word;
   }
   
   &__button {
