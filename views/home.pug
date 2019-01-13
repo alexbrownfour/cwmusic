@@ -1,13 +1,14 @@
 extends layout
 block content
   - var aosdelay = "0.5"
-  - var aosanimation = "slide-up"
+  - var aosanimation = "zoom-in-right"
+  - var aosanimation_alt = "zoom-in-left"
   .centre
     .blog-slider
         .blog-slider__wrp.swiper-wrapper
             .blog-slider__item.swiper-slide
                 .blog-slider__img   
-                    img.lazyload.grayscale-img(src="/images/guitar.jpg" alt="")
+                    img.lazyload.grayscale-img(data-src="/images/guitar.jpg" alt="")
                 .blog-slider__content
                     .blog-slider__title Carl Wallis Music
                     .contact-icons
@@ -32,18 +33,18 @@ block content
                     .blog-slider__text.hidden Perhaps you’ve always wanted to write simple songs on an acoustic guitar, explore the smouldering gypsy swing of Django Reinheirt or dedicate yourself to complex neoclassical shred guitar. Maybe you’ve got a good sense of pitch but always wanted to sing songs in the style of Mariah Carey but couldn't hit the notes.I am happy to work within your capabilities and can also help with vocal technique's such as increasing range and eliminating strain via breathing exercises and posture. I am always open to learning new styles. I have a professional recording equipment if you would like to record your compositions or covers producing top quality stems suited to industry professionals. I can help you gain the best possible takes along with double tracking and harmonising to execute your songs in the required format prior to mixing and mastering. I am familiar with trinity rock and pop and associated board grades 1 to 8 helping with preparation towards exams if you choose to go down the academic route or just want to play for fun. 
             .blog-slider__item.swiper-slide
                 .blog-slider__img
-                    img.lazyload.grayscale-img(src="/images/piano.jpg" alt="")
+                    img.lazyload.grayscale-img(data-src="/images/piano.jpg" alt="")
                 .blog-slider__content
                     .blog-slider__text Perhaps you’ve always wanted to write simple songs on an acoustic guitar, explore the smouldering gypsy swing of Django Reinheirt or dedicate yourself to complex neoclassical shred guitar. Maybe you’ve got a good sense of pitch but always wanted to sing songs in the style of Mariah Carey but couldn't hit the notes.
             .blog-slider__item.swiper-slide
                 .blog-slider__img
-                    img.lazyload.grayscale-img(src="/images/trumpet.jpg" alt="")
+                    img.lazyload.grayscale-img(data-src="/images/trumpet.jpg" alt="")
                 .blog-slider__content
                     .blog-slider__text I am happy to work within your capabilities and can also help with vocal technique's such as increasing range and eliminating strain via breathing exercises and posture. I am always open to learning new styles. I have a professional recording equipment if you would like to record your compositions or covers producing top quality stems suited to industry professionals. 
             .blog-slider__item.swiper-slide
                 .blog-slider__img
                     span.cw-music Carl Wallis Music
-                    img.lazyload.grayscale-img-alt(src="/images/icon_studio.png" alt="")
+                    img.lazyload.grayscale-img-alt(data-src="/images/icon_studio.png" alt="")
                 .blog-slider__content
                     .blog-slider__text I can help you gain the best possible takes along with double tracking and harmonising to execute your songs in the required format prior to mixing and mastering. I am familiar with trinity rock and pop and associated board grades 1 to 8 helping with preparation towards exams if you choose to go down the academic route or just want to play for fun. 
             .blog-slider__pagination
@@ -56,9 +57,9 @@ block content
                     != cert.imageElement 
                     != cert.description
         .float-guitar-img
-            img.lazyload.guitar-info-image(src="/images/cw_guitar.jpg" alt="")
-            .lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0").header-video
-    .scroll-cert(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
+            img.lazyload.guitar-info-image(data-src="/images/cw_guitar.jpg" alt="")
+            .lazyload.lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/e1XTO-EURCU/hqdefault.jpg").header-video
+    .scroll-cert(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
         .blog-slider__title Trumpet
         -trumpetCerts
         each cert in trumpetCerts
@@ -67,8 +68,8 @@ block content
                     != cert.imageElement 
                     != cert.description
         .float-trumpet-img
-            img.lazyload.trumpet-info-image(src="/images/cw_trumpet.jpg" alt="")
-            .lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0").header-video
+            img.lazyload.trumpet-info-image(data-src="/images/cw_trumpet.jpg" alt="")
+            .lazyload.lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/aPE8uSOoylM/hqdefault.jpg").header-video
     .scroll-cert(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
         .blog-slider__title Vocal
         -vocalCerts
@@ -78,24 +79,24 @@ block content
                     != cert.imageElement 
                     != cert.description
         .float-guitar-img
-            img.lazyload.guitar-info-image(src="/images/cw_vocal.jpg" alt="")  
-            .lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0").header-video
+            img.lazyload.guitar-info-image(data-src="/images/cw_vocal.jpg" alt="")  
+            .lazyload.lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/sVLFCgFHbI4/hqdefault.jpg").header-video
     .ytube-video
         div.header-video-container
+            .col-lg-4(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
+                .lazyload.lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="showinfo=0&controls=0" data-src="http://img.youtube.com/vi/e1XTO-EURCU/hqdefault.jpg")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
+                .lazyload.lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/aPE8uSOoylM/hqdefault.jpg")
+            .col-lg-4(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
+                .lazyload.lazyYT(data-youtube-id="9cmxyhFReU8" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/9cmxyhFReU8/hqdefault.jpg")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
+                .lazyload.lazyYT(data-youtube-id="K0zjFXxVopI" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/K0zjFXxVopI/hqdefault.jpg")
+            .col-lg-4(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
+                .lazyload.lazyYT(data-youtube-id="KeHhgS8QaM0" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/KeHhgS8QaM0/hqdefault.jpg")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="9cmxyhFReU8" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
-            .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="K0zjFXxVopI" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
-            .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="KeHhgS8QaM0" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
-            .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
-            .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                .lazyYT(data-youtube-id="05-CAapozKs" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
+                .lazyload.lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/sVLFCgFHbI4/hqdefault.jpg")
+            .col-lg-4(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
+                .lazyload.lazyYT(data-youtube-id="05-CAapozKs" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/05-CAapozKs/hqdefault.jpg")
     .blog-slider.faq(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
         .blog-slider__wrp.swiper-wrapper.faq-translate
             .blog-slider__item.swiper-slide
