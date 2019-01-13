@@ -7,7 +7,7 @@ block content
         .blog-slider__wrp.swiper-wrapper
             .blog-slider__item.swiper-slide
                 .blog-slider__img   
-                    img.grayscale-img(src="/images/guitar.jpg" alt="")
+                    img.lazyload.grayscale-img(src="/images/guitar.jpg" alt="")
                 .blog-slider__content
                     .blog-slider__title Carl Wallis Music
                     .contact-icons
@@ -28,22 +28,22 @@ block content
                                 i.fab.fa-youtube
                     
                     .blog-slider__text Professional Music Tuition
-                    .blog-slider__text I am a musician / music teacher based in Huddersfield. With a background in both popular and classical music I have a broad range of knowledge to help you unleash your full musical potential within a realistic timeframe. 
+                    .blog-slider__text I am a musician / music teacher offering group and individual lessons based in West Yorkshire. With a background in both popular and classical music I have a broad range of knowledge to help you unleash your full musical potential within a realistic timeframe. 
                     .blog-slider__text.hidden Perhaps you’ve always wanted to write simple songs on an acoustic guitar, explore the smouldering gypsy swing of Django Reinheirt or dedicate yourself to complex neoclassical shred guitar. Maybe you’ve got a good sense of pitch but always wanted to sing songs in the style of Mariah Carey but couldn't hit the notes.I am happy to work within your capabilities and can also help with vocal technique's such as increasing range and eliminating strain via breathing exercises and posture. I am always open to learning new styles. I have a professional recording equipment if you would like to record your compositions or covers producing top quality stems suited to industry professionals. I can help you gain the best possible takes along with double tracking and harmonising to execute your songs in the required format prior to mixing and mastering. I am familiar with trinity rock and pop and associated board grades 1 to 8 helping with preparation towards exams if you choose to go down the academic route or just want to play for fun. 
             .blog-slider__item.swiper-slide
                 .blog-slider__img
-                    img.grayscale-img(src="/images/piano.jpg" alt="")
+                    img.lazyload.grayscale-img(src="/images/piano.jpg" alt="")
                 .blog-slider__content
                     .blog-slider__text Perhaps you’ve always wanted to write simple songs on an acoustic guitar, explore the smouldering gypsy swing of Django Reinheirt or dedicate yourself to complex neoclassical shred guitar. Maybe you’ve got a good sense of pitch but always wanted to sing songs in the style of Mariah Carey but couldn't hit the notes.
             .blog-slider__item.swiper-slide
                 .blog-slider__img
-                    img.grayscale-img(src="/images/trumpet.jpg" alt="")
+                    img.lazyload.grayscale-img(src="/images/trumpet.jpg" alt="")
                 .blog-slider__content
                     .blog-slider__text I am happy to work within your capabilities and can also help with vocal technique's such as increasing range and eliminating strain via breathing exercises and posture. I am always open to learning new styles. I have a professional recording equipment if you would like to record your compositions or covers producing top quality stems suited to industry professionals. 
             .blog-slider__item.swiper-slide
                 .blog-slider__img
                     span.cw-music Carl Wallis Music
-                    img.grayscale-img-alt(src="/images/icon_studio.png" alt="")
+                    img.lazyload.grayscale-img-alt(src="/images/icon_studio.png" alt="")
                 .blog-slider__content
                     .blog-slider__text I can help you gain the best possible takes along with double tracking and harmonising to execute your songs in the required format prior to mixing and mastering. I am familiar with trinity rock and pop and associated board grades 1 to 8 helping with preparation towards exams if you choose to go down the academic route or just want to play for fun. 
             .blog-slider__pagination
@@ -56,8 +56,8 @@ block content
                     != cert.imageElement 
                     != cert.description
         .float-guitar-img
-            img.guitar-info-image(src="/images/cw_guitar.jpg" alt="")
-            iframe(src="https://www.youtube.com/embed/e1XTO-EURCU?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+            img.lazyload.guitar-info-image(src="/images/cw_guitar.jpg" alt="")
+            .lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0").header-video
     .scroll-cert(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
         .blog-slider__title Trumpet
         -trumpetCerts
@@ -67,8 +67,8 @@ block content
                     != cert.imageElement 
                     != cert.description
         .float-trumpet-img
-            img.trumpet-info-image(src="/images/cw_trumpet.jpg" alt="")
-            iframe(src="https://www.youtube.com/embed/aPE8uSOoylM?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+            img.lazyload.trumpet-info-image(src="/images/cw_trumpet.jpg" alt="")
+            .lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0").header-video
     .scroll-cert(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
         .blog-slider__title Vocal
         -vocalCerts
@@ -78,30 +78,38 @@ block content
                     != cert.imageElement 
                     != cert.description
         .float-guitar-img
-            img.guitar-info-image(src="/images/cw_vocal.jpg" alt="")  
-            iframe(src="https://www.youtube.com/embed/sVLFCgFHbI4?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+            img.lazyload.guitar-info-image(src="/images/cw_vocal.jpg" alt="")  
+            .lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0").header-video
     .ytube-video
         div.header-video-container
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/e1XTO-EURCU?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/aPE8uSOoylM?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/9cmxyhFReU8?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="9cmxyhFReU8" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/K0zjFXxVopI?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="K0zjFXxVopI" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/KeHhgS8QaM0?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="KeHhgS8QaM0" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/sVLFCgFHbI4?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
             .col-lg-4(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-                iframe(src="https://www.youtube.com/embed/05-CAapozKs?autoplay=0&showinfo=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen).header-video
+                .lazyYT(data-youtube-id="05-CAapozKs" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0")
     .blog-slider.faq(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
         .blog-slider__wrp.swiper-wrapper.faq-translate
             .blog-slider__item.swiper-slide
                 .blog-slider__content
                     .blog-slider__title What services do you offer?
-                    .blog-slider__text I offer lessions in guitar, bass guitar, singing, trumpet, music theory and composition from beginner to advanced. 
+                    .blog-slider__text.info-margin I offer lessions in guitar, bass guitar, singing, trumpet, music theory and composition from beginner to advanced. 
+            .blog-slider__item.swiper-slide
+                .blog-slider__content
+                    .blog-slider__title  What services do you offer?
+                    .blog-slider__text.info-margin DBS checked and on the update service. Relevant Public Liability Insurance. I can provide whole class music tuition for years 1 to 6 and provide lesson plans tailored to suit school resources and required learning objectives whether Ukulele, guitar, singing, brass or percussion. 
+            .blog-slider__item.swiper-slide
+                .blog-slider__content
+                    .blog-slider__title  What services do you offer?
+                    .blog-slider__text.info-margin You are welcome to view my lessons to see if they are right for your school prior to booking a term. I normally split lessons into 40 min sessions for each class but am flexible with regards to timescale if you require PPA Cover. I will always work towards an end goal such as a concert or curriculum based objective. I can raise the standard of music in school and generate interest in both classical and popular music amongst pupils.
             .blog-slider__item.swiper-slide
                 .blog-slider__content.map-transform 
                     .blog-slider__title What areas do you serve?
@@ -111,8 +119,11 @@ block content
                 .blog-slider__content
                     .blog-slider__title How much do your services cost?
                     .blog-slider__text I offer very competative prices on hourly and half-hour lessions and can usually find a rate to suit any level of experience or budget. 
+                    .blog-slider__text I currently charge £140 per day or £75 per half a day for PPA cover. 
             .blog-slider__item.swiper-slide
                 .blog-slider__content
                     .blog-slider__title What are your hours?
                     .blog-slider__text I have no set hours or days and am happy to find a time, day and frequency of lessions to suits the individuals needs.
-            .blog-slider__pagination
+            .blog-slider__pagination.faq-pagination
+
+             

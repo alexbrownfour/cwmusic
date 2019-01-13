@@ -10,50 +10,43 @@ html#main
     title #{title} - Carl Wallis Music
     link(rel='shortcut icon', href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgroaAK2PFwAk/+IAZ7hUALCkJQCt5qEANLMXAHStFwAQyZ4AuLJJAKOWXwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiuwAAAAAAAlWqEAAAAAAlWhFGAAAAACERF0QAAAAAh3d3ZAAAAAAHd3AHAAAAAAAAAAcAAAAAAAAABwAAAAAAAAAHAAMAAAAAAAcAl3AAAAAABwd3mQAAAAAHd5MJAAAAAAd5AJAAAAAAB5AAAAAAAAAAAAAAD//wAA4f8AAMD/AACAfwAAgH8AAIB/AADDfwAA/38AAP9/AAD/dwAA/2MAAP9BAAD/BQAA/xsAAP8/AAD//wAA" type="image/x-icon")
     link(rel='stylesheet', href='/css/main.css')
-    link(href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet") 
+    link(href="https://fonts.googleapis.com/css?family=El+Messiri|Monoto" rel="stylesheet") 
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css")
     link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/lazyyt/0.3.4/lazyYT.min.css')
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-113167798-2")
+    script(src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.1/lazyload.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/lazyyt/0.3.4/lazyYT.min.js")
+    
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-113167798-2')
-
-
-    
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+      lazyload();
+      
   body
 
     include partials/header
     .sliding-background
-    //- #animate-area
     .page-border
       include partials/flash
 
       block content
 
     include partials/footer
-
-
-    script(src='/js/lib/jquery.min.js')
     script(src='/js/lib/bootstrap.js')
-    script(src='/js/lib/popper.min.js')
     script(src='/js/main.js')
     script(src='/js/lib/bcSwipe/jquery.bcSwipe.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js')
-
     script(src='https://unpkg.com/aos@next/dist/aos.js')
-
     script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQPLW2qAGRM3XwpGdQtePWygZQzEg10vw&callback=initMap")
     script.
         $(document).ready(function () {
+         
           var swiper = new Swiper('.blog-slider', {
               spaceBetween: 30,
               effect: 'fade',
@@ -61,32 +54,25 @@ html#main
               mousewheel: {
                 invert: false,
               },
-              // autoHeight: true,
               pagination: {
                 el: '.blog-slider__pagination',
                 clickable: true,
               }
             });
           function initMap() {
-              // The location of Uluru
+              // The location 
               var uluru = {lat: -25.344, lng: 131.036};
-              // The map, centered at Uluru
+              // The map
               var map = new google.maps.Map(
                   document.getElementById('map'), {zoom: 2, center: uluru});
-              // The marker, positioned at Uluru
+              // The marker
               var marker = new google.maps.Marker({position: uluru, map: map});
           }
-
         });
         AOS.init();
-    //TO-DO
-    //- script.
-    //-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    //-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    //-   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    //-   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    //-   ga('create', 'UA-XXXXX-X', 'auto');
-    //-   ga('send', 'pageview');
-      
+        $(document).ready(function(){
+          $('.lazyYT').lazyYT()
+        })
+       
       
       
