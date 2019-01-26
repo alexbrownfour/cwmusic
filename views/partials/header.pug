@@ -1,3 +1,4 @@
+- let year = (new Date()).getFullYear()
 .navbar.navbar-light.fixed-top.navbar-expand-md
   .container
     a.navbar-brand(href='/')
@@ -12,6 +13,9 @@
           a.nav-link(href='/') Home
         li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
           a.nav-link(href='/contact') Contact
+        span.glyphicon.glyphicon-asterisk.availability 
+            | Place available for 
+            !=year
       .social-list(class=(title === 'Contact') ? 'active' : undefined)
         div.social-container
           .floating-buttons

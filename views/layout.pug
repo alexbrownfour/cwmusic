@@ -16,9 +16,10 @@ html#main
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/lazyyt/0.3.4/lazyYT.min.css')
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    script(src="/js/intersection-observer/intersection-observer.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-113167798-2")
-    script(src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.1/lazyload.js")
+    script(src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/lazyyt/0.3.4/lazyYT.min.js")
     
     script.
@@ -29,7 +30,12 @@ html#main
       
       
   body
-
+    <div id="ie-content" class="hidden">
+    <div class="cover"> </div> <span class="cover-text">This website does not support Internet Explorer.</span>
+    <span class="cover-desc">To get in contact please click <a href="http://m.me/carlwallismusic/">here</a> </span>
+    <div class="social-list active ie-fill"><div class="social-container"><div class="floating-buttons" style="left: -2em;"><a href="https://www.facebook.com/carlwallismusic/"><div class="facebook"><i class="fab fa-facebook-f"></i></div></a><a href="http://m.me/carlwallismusic/"><div class="facebook-message"><i class="fas fa-comments"></i></div></a><a href="mailto:c.wallis11@outlook.com?subject=Music Tuition"><div class="email"><i class="fas fa-envelope"></i></div></a><a href="tel:+447884945531"><div class="phone"><i class="fas fa-phone"></i></div></a><a href="https://www.youtube.com/user/carl89uk/videos"><div class="youtube"><i class="fab fa-youtube"></i></div></a></div></div></div> <div class="cover-top"></div> </div>
+    </div>
+ 
     include partials/header
     .sliding-background
     .page-border
@@ -40,7 +46,6 @@ html#main
     include partials/footer
     script(src='/js/lib/bootstrap.js')
     script(src='/js/main.js')
-    script(src='/js/lib/bcSwipe/jquery.bcSwipe.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js')
     script(src='https://unpkg.com/aos@next/dist/aos.js')
     script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQPLW2qAGRM3XwpGdQtePWygZQzEg10vw&callback=initMap")
@@ -71,7 +76,7 @@ html#main
         });
         AOS.init();
         $(document).ready(function(){
-          $('.lazyYT').lazyYT()
+          $('.lazyYT').lazyYT();
           lazyload();
         })
        
