@@ -4,11 +4,13 @@ block content
   - var aosanimation = "zoom-in-up"
   - var aosanimation_alt = "zoom-in-up"
   .centre
-    .blog-slider
+    .blog-slider.move-down
         .blog-slider__wrp.swiper-wrapper
             .blog-slider__item.swiper-slide
                 .blog-slider__img   
                     img.lazyload(data-src="/images/guitar.jpg" alt="")
+                    .glow-wrap  
+                        .glow
                 span.image-content  
                     span.title Carl Wallis Music
                     .blog-slider__content
@@ -36,12 +38,16 @@ block content
             .blog-slider__item.swiper-slide
                 .blog-slider__img
                     img.lazyload(data-src="/images/piano.jpg" alt="")
+                    .glow-wrap  
+                        .glow
                 span.image-content
                     .blog-slider__content.top-padding
                         .blog-slider__text Perhaps you’ve always wanted to write simple songs on an acoustic guitar, explore the smouldering gypsy swing of Django Reinheirt or dedicate yourself to complex neoclassical shred guitar. Maybe you’ve got a good sense of pitch but always wanted to sing songs in the style of Mariah Carey but couldn't hit the notes.
             .blog-slider__item.swiper-slide
                 .blog-slider__img
                     img.lazyload(data-src="/images/trumpet.jpg" alt="")
+                    .glow-wrap  
+                        .glow
                 span.image-content
                     .blog-slider__content.top-padding
                         .blog-slider__text I am happy to work within your capabilities and can also help with vocal technique's such as increasing range and eliminating strain via breathing exercises and posture. I am always open to learning new styles. I have a professional recording equipment if you would like to record your compositions or covers producing top quality stems suited to industry professionals. 
@@ -49,6 +55,8 @@ block content
                 .blog-slider__img
                     span.cw-music Carl Wallis Music
                     img.lazyload(data-src="/images/icon_studio.png" alt="")
+                    .glow-wrap  
+                        .glow
                 span.image-content
                     .blog-slider__content.top-padding
                         .blog-slider__text I can help you gain the best possible takes along with double tracking and harmonising to execute your songs in the required format prior to mixing and mastering. I am familiar with trinity rock and pop and associated board grades 1 to 8 helping with preparation towards exams if you choose to go down the academic route or just want to play for fun. 
@@ -68,34 +76,45 @@ block content
             .glow-wrap  
                 .glow
             .lazyload.lazyYT(data-youtube-id="e1XTO-EURCU" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/e1XTO-EURCU/hqdefault.jpg").header-video
+    
+    
     .scroll-cert(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
-        img.lazyload.watermark.trumpet(data-src="/images/icon_trumpet.png" alt="")
-        .blog-slider__title.mobile-show Trumpet
-        -trumpetCerts
-        each cert in trumpetCerts
+        img.lazyload.watermark.trumpet(data-src="/images/icon_vocal.png" alt="")
+        .blog-slider__title.mobile-show Vocal
+        -vocalCerts
+        each cert in  vocalCerts
             .certs-grid-alt
                 span
                     != cert.imageElement 
                     != cert.description
         .float-trumpet-img
-            span.image-title  Trumpet
+            span.image-title  Vocal
             img.lazyload.trumpet-info-image(data-src="/images/cw_trumpet.jpg" alt="")
-            .lazyload.lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/aPE8uSOoylM/hqdefault.jpg").header-video
+            .glow-wrap  
+                .glow
+            .lazyload.lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/aPE8uSOoylM/hqdefault.jpg ").header-video
+    
+    
     .scroll-cert(data-aos=aosanimation, data-aos-duration="1000", data-aos-delay=aosdelay)
-        img.lazyload.watermark(data-src="/images/icon_vocal.png" alt="")
-        .blog-slider__title.mobile-show Vocal
-        -vocalCerts
-        each cert in vocalCerts
+        img.lazyload.watermark(data-src="/images/icon_trumpet.png" alt="")
+        .blog-slider__title.mobile-show Trumpet
+        -trumpetCerts
+        each cert in trumpetCerts
             .certs-grid
                 span
                     != cert.imageElement 
                     != cert.description
         .float-guitar-img
-            span.image-title  Vocal
+            span.image-title  Trumpet 
             img.lazyload.guitar-info-image(data-src="/images/cw_vocal.jpg" alt="")  
+            .glow-wrap  
+                .glow
             .lazyload.lazyYT(data-youtube-id="sVLFCgFHbI4" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/sVLFCgFHbI4/hqdefault.jpg").header-video
+    
+    
     .scroll-cert(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)
-        img.lazyload.watermark.trumpet(data-src="/images/icon_trumpet.png" alt="")
+        img.lazyload.watermark.guitar(data-src="/images/icon_guitar.png" alt="")
+        img.lazyload.watermark.trumpet(data-src="/images/icon_vocal.png" alt="")
         .blog-slider__title.mobile-show Whole Class Primary School Tuition
         .blog-slider__text.ppa  
             p DBS checked and on the update service.
@@ -108,8 +127,8 @@ block content
             p Contact for more details.
         .float-trumpet-img
             span.image-title  Class Tuition
-            img.lazyload.trumpet-info-image(data-src="/images/cw_trumpet.jpg" alt="")
-            .lazyload.lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/aPE8uSOoylM/hqdefault.jpg").header-video
+            //- img.lazyload.trumpet-info-image(data-src="/images/cw_trumpet.jpg" alt="")
+            //- .lazyload.lazyYT(data-youtube-id="aPE8uSOoylM" data-width="300" data-height="150" data-parameters="autoplay=0&showinfo=0&controls=0" data-src="http://img.youtube.com/vi/aPE8uSOoylM/hqdefault.jpg").header-video
     .ytube-video
         div.header-video-container
             .col-lg-4(data-aos=aosanimation_alt, data-aos-duration="1000", data-aos-delay=aosdelay)

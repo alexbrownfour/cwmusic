@@ -41,7 +41,7 @@ exports.index = (req, res) => {
   res.render('home', {
     title: 'Home',
     instruments: [ ],
-    guitarCerts: [gradImage, classicGuitarImage, bassGuitarImage, electricGuitarImage, musicScrollImage, sheetMusicImage],
+    guitarCerts: [ electricGuitarImage, bassGuitarImage, classicGuitarImage, musicScrollImage, sheetMusicImage, gradImage],
     trumpetCerts: [ trumpetAltImage, gradImage, musicScrollImage, sheetMusicImage],
     vocalCerts: [vocalImage, gradImage, musicScrollImage, sheetMusicImage],
   });

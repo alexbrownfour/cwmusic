@@ -270,7 +270,7 @@ animation: filter-animation 30s linear;
   padding: 25px;
   border-radius: 25px;
   //height: 400px;
-  max-height: 40em;
+  //max-height: 40em;
   transition: all .3s;
   margin: auto auto 0.5em auto;
 }
@@ -388,11 +388,13 @@ border-radius: 20px;
     // transform: translate(25em, -30em);
 }
 
-.float-guitar-img:hover img{
+.float-guitar-img:hover img
+.float-trumpet-img:hover img{
   box-shadow: 1px 1px 10px 0 rgba(0,0,0,.1);
 }
 
-.guitar-info-image .glow-wrap{
+.guitar-info-image .glow-wrap,
+.trumpet-info-image .glow-wrap{
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -401,18 +403,21 @@ border-radius: 20px;
   margin-top: -10px;
 }
 
-.float-guitar-img:hover .glow{
+.float-guitar-img:hover .glow, 
+.float-trumpet-img:hover .glow{
   transform: rotate(45deg) translate(450%, 0);
   transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .float-guitar-img:hover img,
-.float-guitar-img:hover .glow-wrap{
+.float-guitar-img:hover .glow-wrap,
+.float-trumpet-img:hover img,
+.float-trumpet-img:hover .glow-wrap{
   margin-top: 0;
 }
 
 
-.float-guitar-img .glow{
+.float-guitar-img .glow, .float-trumpet-img .glow{
   display: block;
   position:absolute;
   width: 40%;
@@ -475,14 +480,14 @@ border-radius: 20px;
     right: 0;
     padding: 0;
     box-shadow: unset;
-    top: -8em;
+    top: -1em;
   }
 }
 
 
 .top-17em{
   @media screen and (max-width: 768px) {
-    top:17em !important;
+    top:22em !important;
   }
 }
 
@@ -908,7 +913,7 @@ font-family: 'Fira Sans', sans-serif;
 
   @media screen and (max-width: 768px) {
     overflow: scroll;
-    max-height: 14em;
+    //max-height: 14em;
     &.reduced{
       max-height:10em;
     }
@@ -925,7 +930,7 @@ font-family: 'Fira Sans', sans-serif;
 .mobile-show {
   display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .mobile-show {
     display: block;
   }
@@ -942,6 +947,14 @@ font-family: 'Fira Sans', sans-serif;
   max-height: 20em;
   top: 2em;
 }
+
+.move-down{
+  @media screen and (max-width: 768px) {
+    margin-top: 8em !important;
+  }
+  
+}
+
 .blog-slider {
     width: 95%;
   position: relative;
@@ -965,7 +978,7 @@ font-family: 'Fira Sans', sans-serif;
   @media screen and (max-width: 768px) {
     min-height: 500px;
     height: auto;
-    margin: 0 auto 0.5em auto;
+    margin: 2em auto 0.5em auto;
   }
   
   
