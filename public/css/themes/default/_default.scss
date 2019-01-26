@@ -275,17 +275,17 @@ animation: filter-animation 30s linear;
   margin: auto auto 0.5em auto;
 }
 
-.certs-grid{
+.certs-grid, .certs-grid-alt{
   display: inline-flex;
   width: 51%;
   @media only screen and (max-width: 600px) {
     width: 45%;
   }
   span {
+    color: white;
     margin: 1em;
     font-size: 1.2em;
     font-weight: bolder;
-    -webkit-filter: invert(100%);
   }
   img {
     max-width: 15%;
@@ -308,7 +308,7 @@ opacity: 0.3;
 bottom: 0;
 transform: translate(-18%, 17%);
 transform: rotate(-54deg);
-filter: blur(2px) invert(100%);;
+filter: blur(2px);
   &.trumpet{
     right: -55em;
     transform: translate(translate(70%, 17%));
@@ -318,6 +318,7 @@ filter: blur(2px) invert(100%);;
   }
   @media only screen and (max-width: 600px) {
    filter:unset;
+   z-index: -1;
    margin: 0;
    height: 25em;
    left: -135px;
@@ -331,11 +332,14 @@ filter: blur(2px) invert(100%);;
   @media only screen and (max-width: 600px) {
     width: 45%;
   }
-  span {
+  .span{
     margin: 1em;
     font-size: 1.2em;
     font-weight: bolder;
+  }
+  .invert-colour {
     -webkit-filter: invert(100%);
+    filter: invert(100%);
   }
   img {
     max-width: 15%;
@@ -372,7 +376,7 @@ left: 0;
 width: 100%;
 height: 100%;
 border-radius: 20px;
-z-index: 9999;
+//z-index: 9999;
 //box-shadow: inset 0px 0px 0px 14px white;
 }
 .guitar-info-image {
@@ -525,7 +529,7 @@ left: 0;
 width: 100%;
 height: 100%;
 border-radius: 20px;
-z-index: 9999;
+//z-index: 9999;
 //box-shadow: inset 0px 0px 0px 14px white;
 
 }
@@ -901,6 +905,14 @@ font-family: 'Fira Sans', sans-serif;
 
 .blog-slider__text{
   color:white !important;
+
+  @media screen and (max-width: 768px) {
+    overflow: scroll;
+    max-height: 14em;
+    &.reduced{
+      max-height:10em;
+    }
+  }
 }
 
 .blog-slider__pagination {
@@ -1207,7 +1219,7 @@ font-family: 'Fira Sans', sans-serif;
   --mainColor: #589ad599;
 }
 
-a {
+a:not(.nav-link) {
   background:
      linear-gradient(
        to bottom, var(--mainColor) 0%,
@@ -1224,6 +1236,9 @@ a {
 a:hover {
   background-size: 4px 50px;
   color: white !important;
+  .nav-link{
+    color: #000000e6 !important
+  }
 }
 
 .cover {
@@ -1280,4 +1295,15 @@ a:hover {
   z-index: 99999;
   color: white;
   width: 20%;
+}
+
+.ppa{
+  width: 50%;
+  margin: auto;
+  padding-top: 3em;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    padding-top: 0;
+    line-height: 0.9em;
+  }
 }
