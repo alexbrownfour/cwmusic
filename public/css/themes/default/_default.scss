@@ -271,8 +271,12 @@ animation: filter-animation 30s linear;
   border-radius: 25px;
   //height: 400px;
   //max-height: 40em;
+  max-height: 46em;
   transition: all .3s;
   margin: auto auto 0.5em auto;
+  @media only screen and (max-width: 600px) {
+    max-height: 100em;
+  }
 }
 
 .certs-grid, .certs-grid-alt{
@@ -301,18 +305,18 @@ animation: filter-animation 30s linear;
 
 .watermark {
 height: 34em;
-margin: auto;
+//margin: auto;
 position: absolute;
 left: -12em;
 opacity: 0.3;
-bottom: 0;
 transform: translate(-18%, 17%);
 transform: rotate(-54deg);
 filter: blur(2px);
   &.trumpet{
-    right: -55em;
+    left: 37em;
     transform: translate(translate(70%, 17%));
     @media only screen and (max-width: 600px) {
+      left: 0;
       transform: rotate(46deg) scaleX(-1);
      }
   }
@@ -982,9 +986,9 @@ font-family: 'Fira Sans', sans-serif;
   }
   
   
-  @media screen and (max-height: 500px) and (min-width: 992px) {
-        height: 350px;
-  }
+  // @media screen and (max-height: 500px) and (min-width: 992px) {
+  //       height: 350px;
+  // }
   
   &__item {
     display: flex;
@@ -1205,7 +1209,7 @@ font-family: 'Fira Sans', sans-serif;
 
 .ytube-video{
   display: none;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     display: inline-block
   }
 }
