@@ -13,72 +13,125 @@ html#main
     link(href="https://fonts.googleapis.com/css?family=El+Messiri|Monoto" rel="stylesheet") 
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css")
     link(rel='stylesheet', href='https://unpkg.com/aos@next/dist/aos.css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/lazyyt/0.3.4/lazyYT.min.css')
+    link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.min.css")
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    script(src="/js/intersection-observer/intersection-observer.js")
+    //- script(src="/js/intersection-observer/intersection-observer.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-113167798-2")
     script(src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/lazyyt/0.3.4/lazyYT.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.extensions.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/vendors/scrolloverflow.min.js")
     
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-113167798-2')
-      
-      
-  body
-    <div id="ie-content" class="hidden">
-    <div class="cover"> </div> <span class="cover-text">This website does not support Internet Explorer.</span>
-    <span class="cover-desc">To get in contact please use any of the following </span>
-    <div class="social-list active ie-fill"><div class="social-container"><div class="floating-buttons" style="left: -2em;"><a href="https://www.facebook.com/carlwallismusic/"><div class="facebook"><i class="fab fa-facebook-f"></i></div></a><a href="http://m.me/carlwallismusic/"><div class="facebook-message"><i class="fas fa-comments"></i></div></a><a href="mailto:c.wallis11@outlook.com?subject=Music Tuition"><div class="email"><i class="fas fa-envelope"></i></div></a><a href="tel:+447884945531"><div class="phone"><i class="fas fa-phone"></i></div></a><a href="https://www.youtube.com/user/carl89uk/videos"><div class="youtube"><i class="fab fa-youtube"></i></div></a></div></div></div> <div class="cover-top"></div> </div>
-    </div>
- 
+  body 
     include partials/header
-    .sliding-background
-    .page-border
-      include partials/flash
-
+    include partials/flash
       block content
-
+    
     include partials/footer
-    script(src='/js/lib/bootstrap.js')
     script(src='/js/main.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js')
+    script(src='/js/lib/bootstrap.js')
     script(src='https://unpkg.com/aos@next/dist/aos.js')
-    script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQPLW2qAGRM3XwpGdQtePWygZQzEg10vw&callback=initMap")
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQPLW2qAGRM3XwpGdQtePWygZQzEg10vw&callback=initMap" )
     script.
-        $(document).ready(function () {
-         
-          var swiper = new Swiper('.blog-slider', {
-              spaceBetween: 30,
-              effect: 'fade',
-              loop: true,
-              mousewheel: {
-                invert: false,
-              },
-              pagination: {
-                el: '.blog-slider__pagination',
-                clickable: true,
-              }
-            });
-          function initMap() {
-              // The location 
-              var uluru = {lat: -25.344, lng: 131.036};
-              // The map
-              var map = new google.maps.Map(
-                  document.getElementById('map'), {zoom: 2, center: uluru});
-              // The marker
-              var marker = new google.maps.Marker({position: uluru, map: map});
-          }
-        });
-        AOS.init();
+
+        function initMap() {
+            // The location 
+            var uluru = {lat: 53.644548, lng: -1.725866};
+            // The map
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 9, center: uluru});
+            // The marker
+            var marker = new google.maps.Marker({position: uluru, map: map});
+
+            var cityCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: map,
+            center: {lat: 53.644548, lng: -1.725866},
+            radius: 15000
+          });
+
+        }
+  
+        
         $(document).ready(function(){
+          AOS.init();
           $('.lazyYT').lazyYT();
           lazyload();
+        $('#fullpage').fullpage({
+            //options here
+            licenseKey: 'D8C1D91F-48574EC0-AA4559CD-F253FC63',
+            anchors:['info', 'tuition', 'faq', 'recordings'],
+            //Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            fitToSectionDelay: 1000,
+            scrollBar: false,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: true,
+            continuousHorizontal: true,
+            scrollHorizontally: true,
+            interlockedSlides: false,
+            dragAndMove: true,
+            offsetSections: false,
+            resetSliders: false,
+            fadingEffect: true,
+            normalScrollElements: '#element1, .element2',
+            scrollOverflow: true,
+            scrollOverflowReset: false,
+            scrollOverflowOptions: null,
+            touchSensitivity: 15,
+            normalScrollElementTouchThreshold: 5,
+            bigSectionsDestination: null,
+
+            //Accessibility
+            keyboardScrolling: true,
+            animateAnchor: true,
+            recordHistory: true,
+
+            //Design
+            controlArrows: true,
+            verticalCentered: true,
+            sectionsColor : ['#000', '#000', '#000'],
+            paddingTop: '0',
+            paddingBottom: '10px',
+            fixedElements: '#header, .footer',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            responsiveSlides: false,
+            parallax: false,
+            parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+            //Custom selectors
+            sectionSelector: '.section',
+            slideSelector: '.slide',
+
+            lazyLoading: true,
+        });
+ 
+        //methods
+        $.fn.fullpage.setAllowScrolling(true);
         })
-       
+    script#__bs_script__
+      //<![CDATA[
+          document.write("<script async src='http://HOST:8000/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>".replace("HOST", location.hostname));
+      //]]>
+   
       
       

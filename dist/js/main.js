@@ -27,4 +27,20 @@
     }
   }
 });
+alert("");
 
+$("a[href^='#']").click(function(e) { 
+  console.log(e, $(this).attr('href'));
+  let section = $(this).attr('href');
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $(section).offset().top
+    
+}, 2000);
+if(history.pushState) {
+  history.pushState(null, null, section);
+}
+else {
+  location.hash = section;
+}
+  return false;
+});
